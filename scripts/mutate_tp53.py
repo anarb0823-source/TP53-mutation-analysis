@@ -7,14 +7,15 @@ for feature in record.features:
 
 dna = cds_seq
 pos=40
-dna[:pos] + dna[pos+1:]
+mutated = dna[:pos] + dna[pos+1:]
 print(dna[:pos] + dna[pos+1:])
 
 healthy_protein = Seq(dna).translate()
-print(healthy_protein)
+print( "Healthy:", healthy_protein)
 
 mutated_protein = Seq(mutated).translate()
-print(mutated_protein)
+
+print( "Mutated:" , mutated_protein)
 
 print("*" in mutated_protein)
 
@@ -73,4 +74,3 @@ elif mutation_type == "missense":
 
 elif mutation_type == "silent":
     print("Severity: mild (silent mutation)")
-
